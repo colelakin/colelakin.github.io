@@ -22,8 +22,8 @@ h1{
 }
 
 .HelpPage{
-  width: inherit;
-  height:auto;
+  height:80%;
+  width: auto;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -46,11 +46,13 @@ h1{
   margin-bottom: 10px;
 }
 .GamePage{
-  transform: rotate(90deg);
-  width: 80%;
+  transform: rotate(45deg);
+  align-content: center;
+  width: 100%;
   height:auto;
   display: block;
+  margin-top: 50%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 10px;
+  margin-bottom: 50%;
 }
