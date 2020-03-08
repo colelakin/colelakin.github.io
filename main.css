@@ -1,0 +1,56 @@
+.html1 {
+  background: url(Images/Gunslinger_Background_Portrait.png) no-repeat center center fixed;
+  background-size: cover;
+}
+  .html2 {
+    background: url(Images/Gunslinger_Background_Landscape.png) no-repeat center center fixed;
+    background-size: cover;
+}
+h1{
+  font-size: 10%;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+
+.HomePage{
+  width: 80%;
+  height:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.HelpPage{
+  width: inherit;
+  height:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.OpponentPage{
+  width: 80%;
+  height:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.HomeButton{
+  width: 80%;
+  height:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+.GamePage{
+  transform: rotate(90deg);
+  width: 80%;
+  height:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
