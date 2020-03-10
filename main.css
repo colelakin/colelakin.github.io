@@ -1,58 +1,83 @@
 .html1 {
   background: url(Images/Gunslinger_Background_Portrait.png) no-repeat center center fixed;
   background-size: cover;
+  overflow-y: hidden;
+  overflow-x: hidden;
 }
-  .html2 {
-    background: url(Images/Gunslinger_Background_Landscape.png) no-repeat center center fixed;
-    background-size: cover;
-}
-h1{
-  font-size: 10%;
-  text-align: center;
-  margin: 1rem 0;
-}
-
-
-.HomePage{
-  width: 80%;
-  height:auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.html2 {
+  background: url(Images/Gunslinger_Background_Landscape.png) no-repeat center center fixed;
+  background-size: cover;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
-.HelpPage{
-  height:80%;
-  width: auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.OpponentPage{
-  width: 80%;
-  height:auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  #HomePage_Logo{
+    height: 20vh;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-}
-.HomeButton{
-  width: 80%;
-  height:auto;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-}
-.GamePage{
-  transform: rotate(45deg);
-  align-content: center;
-  width: 100%;
-  height:auto;
-  display: block;
-  margin-top: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50%;
-}
+  .HomePageButton{
+    display: block;
+    height: 40vh;
+    width: cover;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #HelpPage_Logo{
+    height: 20vh;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #HelpPageText{
+    height: 60vh;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .HomeButton{
+    height:15vh;
+    width:auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #ChooseYourOpponent{
+    height: 40vh;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #TempButton{
+    height: 45vh;
+    width: 90vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #Gun{
+    display:block;
+
+    width: 100vw;
+    height: auto;
+    position: fixed;
+    margin-top: -100px;
+    margin-left: -300px;
+    top:50%;
+    left:50%;
+    z-index: 1;
+    transform: rotate(90deg);
+  }
