@@ -1,13 +1,14 @@
 let permissionGranted = false;
+alert("start");
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  alert("setup1");
   if (typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){
 // ios 13 device
-    DeviceOrientationEvent.requestPermission()
+    DeviceOrientationEvent.requestPermission
       .catch(() => {
       let button = createButton("click to allow access to sensors");
-      button.style("font-size", "24px");
+      button.style("textSize", "24px");
       button.center();
       button.mousePressed( requestAccess );
       throw error;
@@ -15,16 +16,21 @@ function setup() {
     .then(() => {
       permissionGranted = true;
     })
+    alert("setup if");
 }  else {
 //non ios 13 device
-    textSize(48);
+
+    textSize("48px");
     text("non ios 13 device", 100, 100);
     permissionGranted = true;
+    alert("setup else if");
     }
+    return;
 }
 
 function requestAccess(){
-  DeviceOrientationEvent.requestPermission()
+  alert("request access");
+  DeviceOrientationEvent.requestPermission
     .then(response => {
       if (response == 'granted'){
         permissionGranted = true;
@@ -35,9 +41,24 @@ function requestAccess(){
   .catch(console.error);
 
   this.remove();
+  return;
 }
 
-function draw(){
+function Rotation(){
+  alert("rotation");
   if (!permissionGranted) return;
-  text(rotationX, 100, 100);
+  text(rotationX, 0, 100);
+  alert("rotation2");
+}
+
+function accuracy(rotationX){
+  if (rotationX > 10){
+    aim = "too high";
+  }
+  else if (rotationX < -10) {
+    aim = "too low";
+  }
+  else {
+    aim = "Hit!";
+  }
 }
