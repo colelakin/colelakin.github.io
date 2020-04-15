@@ -1,64 +1,41 @@
-let permissionGranted = false;
-alert("start");
+let button
+let permissionGranted = false
+let nonios13device = false
+
+let cx, cy
 
 function setup() {
-  alert("setup1");
-  if (typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function'){
-// ios 13 device
-    DeviceOrientationEvent.requestPermission
-      .catch(() => {
-      let button = createButton("click to allow access to sensors");
-      button.style("textSize", "24px");
-      button.center();
-      button.mousePressed( requestAccess );
-      throw error;
-    })
-    .then(() => {
-      permissionGranted = true;
-    })
-    alert("setup if");
-}  else {
-//non ios 13 device
+  createCanvas(windowWidth, windowHeight)
 
-    textSize("48px");
-    text("non ios 13 device", 100, 100);
-    permissionGranted = true;
-    alert("setup else if");
-    }
-    return;
+  if (typeof(DeviceOrientationEvent) !== 'undefined' && typeof(DeviceOrientationEvent.requestPermission) === 'function') {
+    button = createButton('click to allow access to sensors')
+    button.style("font-size", "24px")
+    button.center()
+    button.mousePressed(requestAccess)
+  } else {
+    // non ios 13 devices
+    nonios13device = true
+  }
 }
 
-function requestAccess(){
-  alert("request access");
+function draw() {
+  if (!permissionGranted && !nonios13device) {
+    // I am simply not running draw, but you can treat in different ways.
+    return
+  }
+
+  background('lightblue')
+  textSize(72)
+  text(rotationX, 100, 100)
+}
+
+function requestAccess() {
   DeviceOrientationEvent.requestPermission
-    .then(response => {
-      if (response == 'granted'){
-        permissionGranted = true;
-      } else {
-        permissionGranted = false;
+  .then(response => {
+      if (response == 'granted') {
+        permissionGranted = true
       }
-  })
-  .catch(console.error);
-
-  this.remove();
-  return;
-}
-
-function Rotation(){
-  alert("rotation");
-  if (!permissionGranted) return;
-  text(rotationX, 0, 100);
-  alert("rotation2");
-}
-
-function accuracy(rotationX){
-  if (rotationX > 10){
-    aim = "too high";
-  }
-  else if (rotationX < -10) {
-    aim = "too low";
-  }
-  else {
-    aim = "Hit!";
-  }
+    })
+    .catch(console.error)
+  button.remove()
 }
